@@ -7,9 +7,9 @@ import io.ktor.server.routing.*
 
 fun Route.root() {
     get("/"){
-        call.respond(
+        call.respondText(
             status = HttpStatusCode.OK,
-            message = "Welcome to Notion Assistant Integration API"
+            text = "Welcome to Notion Assistant Integration API"
         )
     }
 }

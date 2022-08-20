@@ -10,12 +10,20 @@ import org.koin.ktor.ext.inject
 fun Route.getNextActions(){
     val notionProvider: NotionProvider by inject()
 
-    get("/nextActions"){
-        val apiResponse = notionProvider.getNextActions()
+    get("/add"){
+        val text = call.request.queryParameters["text"]
+        if (text.isNullOrEmpty()){
+            call.respondText(
+                status = HttpStatusCode.BadRequest,
+                text = "Text parameter null or missing."
+            )
+        } else {
+            val apiResponse = notionProvider.addAction()
 
-        call.respond(
-            status = HttpStatusCode.OK,
-            message = apiResponse
-        )
+            call.respond(
+                status = HttpStatusCode.OK,
+                message = apiResponse
+            )
+        }
     }
 }

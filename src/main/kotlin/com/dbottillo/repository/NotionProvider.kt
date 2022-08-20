@@ -3,5 +3,5 @@ package com.dbottillo.repository
 import com.dbottillo.models.ApiResponse
 
 interface NotionProvider {
-    suspend fun getNextActions(): ApiResponse
+    suspend fun addAction(): ApiResponse
 }

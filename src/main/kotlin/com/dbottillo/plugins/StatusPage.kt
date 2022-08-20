@@ -8,8 +8,8 @@ import io.ktor.server.response.*
 fun Application.configureStatusPages(){
     install(StatusPages) {
         status(HttpStatusCode.NotFound) { call, status ->
-            call.respond(
-                message = "Page not found.",
+            call.respondText(
+                text = "Page not found.",
                 status = status
             )
         }

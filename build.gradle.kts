@@ -4,6 +4,7 @@ val ktorVersion: String by project
 val kotlinVersion: String by project
 val logbackVersion: String by project
 val koinVersion: String by project
+val truthVersion: String by project
 
 plugins {
     application
@@ -39,6 +40,7 @@ dependencies {
 
     testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlinVersion")
+    testImplementation("com.google.truth:truth:$truthVersion")
 }
 
 tasks.test {
