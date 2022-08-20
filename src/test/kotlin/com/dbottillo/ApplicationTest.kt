@@ -1,7 +1,6 @@
 package com.dbottillo
 
 import com.dbottillo.models.ApiResponse
-import com.dbottillo.repository.NotionProvider
 import com.google.common.truth.Truth.assertThat
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
@@ -10,7 +9,6 @@ import io.ktor.server.testing.*
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Test
-import org.koin.java.KoinJavaComponent.inject
 
 class ApplicationTest {
 
